@@ -55,6 +55,10 @@
         {
             "name": "Realmzer",
             "address": "https://anisette.realmzer.xyz"
+        },
+        {
+            "name": "FreeTTMod",
+            "address": "https://freettmod.onrender.com"
         }
     ]
 }
