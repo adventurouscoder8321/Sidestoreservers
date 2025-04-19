@@ -2515,17 +2515,6 @@
             "iconURL": "https://raw.githubusercontent.com/Neoncat-OG/TrollStore-IPAs/main/icons/au.com.savageinteractive.procreate.png"
           },
           {
-            "name": "iTorrent",
-            "bundleIdentifier": "ru.nonamedude.iTorrent",
-            "version": "2.0.13-2",
-            "versionDate": "2024-11-28",
-            "size": 7025619,
-            "downloadURL": "https://github.com/Neoncat-OG/TrollStore-IPAs/releases/download/11-28-2024/iTorrent-2.0.13-2.ipa",
-            "developerName": "XITRIX",
-            "localizedDescription": "Probably the best Torrent client for iOS 9.3 and up.\nLast updated: 07-30-2024\nStatus: \u2705 \ud83d\udc4d \u2b50",
-            "iconURL": "https://raw.githubusercontent.com/Neoncat-OG/TrollStore-IPAs/main/icons/ru.nonamedude.iTorrent.png"
-          },
-          {
             "name": "CarTube",
             "bundleIdentifier": "com.avangelista.CarTube",
             "version": "1.3",
@@ -2755,83 +2744,6 @@
             "developerName": "iOS Tutorials + App Cracks",
             "localizedDescription": "Injected with Pro. Translation and dictionary app making it easy to break language barriers. It allows for easy translation of text, websites, objects, and voice conversations in over 100 languages. Note: Begin by installing it from the App Store, log in, then proceed to force install the TrollStore version. This should grant access to other features like iTranslate keyboard.\nLast updated: 07-16-2024\nStatus: \u2705 \ud83d\udc4d",
             "iconURL": "https://raw.githubusercontent.com/Neoncat-OG/TrollStore-IPAs/main/icons/com.outerspaceapps.itranslate.png"
-          },
-          {
-            "name": "iTorrent",
-            "bundleIdentifier": "ru.nonamedude.iTorrent",
-            "version": "1.9-25",
-            "versionDate": "2024-10-17",
-            "size": 17095980,
-            "downloadURL": "https://github.com/Neoncat-OG/TrollStore-IPAs/releases/download/iTorrent/iTorrent-1.9-25.ipa",
-            "developerName": "XITRIX",
-            "localizedDescription": "Probably the best Torrent client for iOS 9.3 and up.\nLast updated: 07-30-2024\nStatus: \u2705 \ud83d\udc4d \u2b50",
-            "iconURL": "https://raw.githubusercontent.com/Neoncat-OG/TrollStore-IPAs/main/icons/ru.nonamedude.iTorrent.png"
-          },
-          {
-            "name": "iTorrent",
-            "bundleIdentifier": "ru.nonamedude.iTorrent",
-            "version": "2.0.10-1",
-            "versionDate": "2024-10-17",
-            "size": 6581661,
-            "downloadURL": "https://github.com/Neoncat-OG/TrollStore-IPAs/releases/download/iTorrent/iTorrent-2.0.10-1.ipa",
-            "developerName": "XITRIX",
-            "localizedDescription": "Probably the best Torrent client for iOS 9.3 and up.\nLast updated: 07-30-2024\nStatus: \u2705 \ud83d\udc4d \u2b50",
-            "iconURL": "https://raw.githubusercontent.com/Neoncat-OG/TrollStore-IPAs/main/icons/ru.nonamedude.iTorrent.png"
-          },
-          {
-            "name": "iTorrent",
-            "bundleIdentifier": "ru.nonamedude.iTorrent",
-            "version": "2.0.12-1",
-            "versionDate": "2024-11-12",
-            "size": 7002771,
-            "downloadURL": "https://github.com/Neoncat-OG/TrollStore-IPAs/releases/download/iTorrent/iTorrent-2.0.12-1.ipa",
-            "developerName": "XITRIX",
-            "localizedDescription": "Probably the best Torrent client for iOS 9.3 and up.\nLast updated: 07-30-2024\nStatus: \u2705 \ud83d\udc4d \u2b50",
-            "iconURL": "https://raw.githubusercontent.com/Neoncat-OG/TrollStore-IPAs/main/icons/ru.nonamedude.iTorrent.png"
-          },
-          {
-            "name": "iTorrent",
-            "bundleIdentifier": "ru.nonamedude.iTorrent",
-            "version": "2.0.7-2",
-            "versionDate": "2024-10-17",
-            "size": 6755521,
-            "downloadURL": "https://github.com/Neoncat-OG/TrollStore-IPAs/releases/download/iTorrent/iTorrent-2.0.7-2.ipa",
-            "developerName": "XITRIX",
-            "localizedDescription": "Probably the best Torrent client for iOS 9.3 and up.\nLast updated: 07-30-2024\nStatus: \u2705 \ud83d\udc4d \u2b50",
-            "iconURL": "https://raw.githubusercontent.com/Neoncat-OG/TrollStore-IPAs/main/icons/ru.nonamedude.iTorrent.png"
-          },
-          {
-            "name": "iTorrent",
-            "bundleIdentifier": "ru.nonamedude.iTorrent",
-            "version": "2.0.7-5",
-            "versionDate": "2024-10-17",
-            "size": 6917642,
-            "downloadURL": "https://github.com/Neoncat-OG/TrollStore-IPAs/releases/download/iTorrent/iTorrent-2.0.7-5.ipa",
-            "developerName": "XITRIX",
-            "localizedDescription": "Probably the best Torrent client for iOS 9.3 and up.\nLast updated: 07-30-2024\nStatus: \u2705 \ud83d\udc4d \u2b50",
-            "iconURL": "https://raw.githubusercontent.com/Neoncat-OG/TrollStore-IPAs/main/icons/ru.nonamedude.iTorrent.png"
-          },
-          {
-            "name": "iTorrent",
-            "bundleIdentifier": "ru.nonamedude.iTorrent",
-            "version": "2.0.8-1",
-            "versionDate": "2024-10-17",
-            "size": 6917810,
-            "downloadURL": "https://github.com/Neoncat-OG/TrollStore-IPAs/releases/download/iTorrent/iTorrent-2.0.8-1.ipa",
-            "developerName": "XITRIX",
-            "localizedDescription": "Probably the best Torrent client for iOS 9.3 and up.\nLast updated: 07-30-2024\nStatus: \u2705 \ud83d\udc4d \u2b50",
-            "iconURL": "https://raw.githubusercontent.com/Neoncat-OG/TrollStore-IPAs/main/icons/ru.nonamedude.iTorrent.png"
-          },
-          {
-            "name": "iTorrent",
-            "bundleIdentifier": "ru.nonamedude.iTorrent",
-            "version": "2.0.9-1",
-            "versionDate": "2024-10-17",
-            "size": 6555495,
-            "downloadURL": "https://github.com/Neoncat-OG/TrollStore-IPAs/releases/download/iTorrent/iTorrent-2.0.9-1.ipa",
-            "developerName": "XITRIX",
-            "localizedDescription": "Probably the best Torrent client for iOS 9.3 and up.\nLast updated: 07-30-2024\nStatus: \u2705 \ud83d\udc4d \u2b50",
-            "iconURL": "https://raw.githubusercontent.com/Neoncat-OG/TrollStore-IPAs/main/icons/ru.nonamedude.iTorrent.png"
           },
           {
             "name": "iScreenVIP",
@@ -22629,25 +22541,6 @@
               "https://quarklibrary.imfast.io/Chimera/image0.png",
               "https://quarklibrary.imfast.io/Chimera/image1.png",
               "https://quarklibrary.imfast.io/Chimera/image2.png"
-            ]
-          },
-          {
-            "name": "iTorrent",
-            "bundleIdentifier": "ru.nonamedude.iTorrent",
-            "developerName": "XITRIX",
-            "subtitle": "Straightforward iOS torrent client app",
-            "version": "1.7.4.1",
-            "versionDate": "2020-03-19T14:30:00-07:00",
-            "versionDescription": "Fixed:\n\n• Background mode not work if zero speed limit disabled\n\nWhat's new:\n\n• Added https protocol support for trackers!\n• FTP server replaced by WebDAV, file sharing is now possible through a web browser\n• Added background stop when downloading at zero speed\n• Clicking on a notification now opens a specific window\n• UI improvements",
-            "downloadURL": "https://dl.orangedox.com/PandaApp/6?dl=1",
-            "localizedDescription": "iTorrent is an ordinary torrent client for iOS with Files app support.\n\nWhat can this app do:\n\n• Download in the background\n• Sequential download (use VLC to watch films while loading)\n• Add torrent files from Share menu (Safari and other apps)\n• Add magnet links directly from Safari\n• Store files in Files app (iOS 11+)\n• File sharing directly from app\n• Download torrent by link\n• Download torrent by magnet\n• Send notification on torrent downloaded\n• FTP Server (unstable)\n• Select files to download or not\n• Change UI to dark theme\n\nNow supporting these localizations:\n• English\n• Russian",
-            "iconURL": "https://images.opencollective.com/itorrent/0ec0088/logo/256.png",
-            "tintColor": "e32b3c",
-            "size": 20132659,
-            "screenshotURLs": [
-              "https://quarklibrary.imfast.io/iTorrent/image0.png",
-              "https://quarklibrary.imfast.io/iTorrent/image2.png",
-              "https://quarklibrary.imfast.io/iTorrent/image3.png"
             ]
           },
           {
