@@ -1,6 +1,10 @@
 {
     "servers": [
         {
+            "name": "FreeTTMod",
+            "address": "https://freettmod.onrender.com"
+        },
+        {
             "name": "SideStore",
             "address": "https://ani.sidestore.io"
         },
@@ -55,10 +59,6 @@
         {
             "name": "Realmzer",
             "address": "https://anisette.realmzer.xyz"
-        },
-        {
-            "name": "FreeTTMod",
-            "address": "https://freettmod.onrender.com"
         }
     ]
 }
