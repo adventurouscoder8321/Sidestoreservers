@@ -1,5 +1,5 @@
 {
-    "name": "RuSideStore AIO",
+    "name": "RuSideStore AIO TEST",
     "identifier": "com.rusidestore.AIOrepo",
     "apps": [
         {
@@ -18596,4 +18596,5 @@
             "iconURL": "https://raw.githubusercontent.com/apptesters-org/AppTesters_Repo/main/icons/Mailroom.Canary-iOS.png"
         }
     ]
+
 }
