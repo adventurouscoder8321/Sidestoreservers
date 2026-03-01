@@ -1,7 +1,7 @@
 {
     "servers": [
         {
-            "name": "RuSideStore",
+            "name": "RuSideStore тгк @rusidestore",
             "address": "https://freettmod.onrender.com"
         },
         {
