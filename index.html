@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repo Explorer | RuSideStore</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-color: #05070a;
+            --card-bg: rgba(15, 23, 42, 0.6);
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-dim: #64748b;
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glow: 0 0 20px rgba(56, 189, 248, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 50% -20%, #1e293b, #05070a),
+                radial-gradient(circle at 0% 100%, #0f172a, transparent 25%);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Dynamic Header */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-top: 40px;
+        }
+
+        .repo-info h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+            background: linear-gradient(to bottom, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .explorer-tag {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-top: -5px;
+        }
+
+        #repo-subtitle {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            opacity: 0.8;
+        }
+
+        /* Controls Area */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--glow);
+        }
+
+        .input-group {
+            display: flex;
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            padding: 8px 16px;
+            border: 1px solid var(--glass-border);
+            align-items: center;
+            transition: border-color 0.3s;
+        }
+
+        .input-group:focus-within {
+            border-color: var(--accent-color);
+        }
+
+        .input-group i, .input-group svg { 
+            color: var(--text-dim); 
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+        }
+
+        input {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 10px 0;
+            width: 100%;
+            outline: none;
+            font-size: 0.95rem;
+        }
+
+        /* App Grid (3 rows x 5 columns) */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            margin-top: 50px;
+            min-height: 500px;
+        }
+
+        .app-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(56, 189, 248, 0.4);
+            background: rgba(30, 41, 59, 0.8);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+        }
+
+        .app-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 22px;
+            margin-bottom: 18px;
+            object-fit: cover;
+            background: #1e293b;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .app-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            width: 100%;
+            color: #fff;
+        }
+
+        .app-version {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+        }
+
+        .app-size {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            background: var(--text-main);
+            color: #000;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            width: 100%;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .download-btn:hover {
+            background: var(--accent-color);
+            transform: scale(1.02);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .page-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .page-btn:hover:not(:disabled) {
+            background: var(--accent-color);
+            color: #000;
+        }
+
+        .page-btn:disabled { opacity: 0.2; cursor: not-allowed; }
+
+        #page-indicator {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 1100px) { .app-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 768px) { 
+            .app-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; } 
+            .repo-info h1 { font-size: 2rem; }
+        }
+        @media (max-width: 480px) { .app-grid { grid-template-columns: repeat(1, 1fr); } }
+
+        .loader { text-align: center; padding: 100px; color: var(--accent-color); font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="repo-info">
+            <h1 id="repo-title">RuSideStore AIO</h1>
+            <span class="explorer-tag">explorer by rusidestore</span>
+            <p id="repo-subtitle">Warming up...</p>
+        </div>
+    </header>
+
+    <div class="controls">
+        <div class="input-group">
+            <i data-lucide="globe"></i>
+            <input type="text" id="repo-url" value="https://adventurouscoder8321.github.io/Sidestoreservers/aio-repo.json">
+        </div>
+        <div class="input-group">
+            <i data-lucide="search"></i>
+            <input type="text" id="search-input" placeholder="Search apps...">
+        </div>
+    </div>
+
+    <div id="loading" class="loader">
+        <p>Fetching repository data...</p>
+    </div>
+
+    <div id="app-grid" class="app-grid"></div>
+
+    <div class="pagination">
+        <button class="page-btn" id="prev-page"><i data-lucide="arrow-left"></i></button>
+        <span id="page-indicator">Page 1 of 1</span>
+        <button class="page-btn" id="next-page"><i data-lucide="arrow-right"></i></button>
+    </div>
+</div>
+
+<script>
+    const APPS_PER_PAGE = 15;
+    let allApps = [];
+    let filteredApps = [];
+    let currentPage = 1;
+
+    const grid = document.getElementById('app-grid');
+    const repoTitle = document.getElementById('repo-title');
+    const repoSubtitle = document.getElementById('repo-subtitle');
+    const loading = document.getElementById('loading');
+    const searchInput = document.getElementById('search-input');
+    const repoUrlInput = document.getElementById('repo-url');
+
+    function refreshIcons() {
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function formatBytes(bytes) {
+        if (!bytes || bytes === 0) return "Unknown Size";
+        return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+    }
+
+    /**
+     * CORS FIX: This function attempts a direct fetch,
+     * and if it fails, it retries using a CORS Proxy.
+     */
+    async function smartFetch(url) {
+        try {
+            // Attempt 1: Direct Fetch
+            const response = await fetch(url);
+            if (response.ok) return await response.json();
+            throw new Error('Direct fetch failed');
+        } catch (e) {
+            console.log("Direct access blocked by CORS. Trying Proxy...");
+            // Attempt 2: CORS Proxy (corsproxy.io is very reliable)
+            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
+            const response = await fetch(proxyUrl);
+            if (!response.ok) throw new Error('Proxy fetch failed');
+            return await response.json();
+        }
+    }
+
+    async function loadRepo(url) {
+        loading.style.display = 'block';
+        grid.style.opacity = '0.3';
+        repoSubtitle.innerText = "Connecting to repository...";
+        
+        try {
+            const data = await smartFetch(url);
+            
+            // Dynamic Header & Subtitle
+            repoTitle.innerText = data.name || "External Repo";
+            repoSubtitle.innerText = data.subtitle || `Total Apps: ${data.apps.length}`;
+            
+            // Dynamic Search Placeholder
+            searchInput.placeholder = `Search ${data.apps.length.toLocaleString()} apps...`;
+            
+            allApps = data.apps;
+            filteredApps = allApps;
+            currentPage = 1;
+            renderPage();
+        } catch (err) {
+            repoSubtitle.innerText = "Error: Repository unreachable (CORS or 404)";
+            console.error(err);
+        } finally {
+            loading.style.display = 'none';
+            grid.style.opacity = '1';
+        }
+    }
+
+    function renderPage() {
+        grid.innerHTML = '';
+        const start = (currentPage - 1) * APPS_PER_PAGE;
+        const end = start + APPS_PER_PAGE;
+        const pageApps = filteredApps.slice(start, end);
+
+        if (pageApps.length === 0) {
+            grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #64748b;">No apps found matching your search.</div>';
+        }
+
+        pageApps.forEach(app => {
+            const card = document.createElement('div');
+            card.className = 'app-card';
+            const icon = app.iconURL || 'https://side-store.xyz/assets/img/icon.png';
+            
+            card.innerHTML = `
+                <img src="${icon}" class="app-icon" onerror="this.src='https://side-store.xyz/assets/img/icon.png'">
+                <div class="app-name">${app.name}</div>
+                <div class="app-version">v${app.version}</div>
+                <div class="app-size">${formatBytes(app.size)}</div>
+                <a href="${app.downloadURL}" class="download-btn">Get App</a>
+            `;
+            grid.appendChild(card);
+        });
+
+        const totalPages = Math.ceil(filteredApps.length / APPS_PER_PAGE);
+        document.getElementById('page-indicator').innerText = `Page ${currentPage} of ${totalPages || 1}`;
+        document.getElementById('prev-page').disabled = currentPage === 1;
+        document.getElementById('next-page').disabled = currentPage >= totalPages;
+        
+        refreshIcons();
+    }
+
+    // Events
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        filteredApps = allApps.filter(a => 
+            a.name.toLowerCase().includes(term) || 
+            (a.bundleIdentifier && a.bundleIdentifier.toLowerCase().includes(term))
+        );
+        currentPage = 1;
+        renderPage();
+    });
+
+    repoUrlInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') loadRepo(e.target.value);
+    });
+
+    document.getElementById('prev-page').onclick = () => {
+        if (currentPage > 1) { currentPage--; renderPage(); window.scrollTo({top: 0, behavior: 'smooth'}); }
+    };
+
+    document.getElementById('next-page').onclick = () => {
+        const totalPages = Math.ceil(filteredApps.length / APPS_PER_PAGE);
+        if (currentPage < totalPages) {
+            currentPage++; renderPage(); window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    };
+
+    window.onload = () => {
+        loadRepo(repoUrlInput.value);
+    };
+</script>
+
+</body>
+</html>
