@@ -16,12 +16,7 @@
             --glow: 0 0 20px rgba(56, 189, 248, 0.15);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, system-ui, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, system-ui, sans-serif; }
 
         body {
             background-color: var(--bg-color);
@@ -33,18 +28,9 @@
             padding-bottom: 80px;
         }
 
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
 
-        /* Dynamic Header */
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding-top: 40px;
-        }
+        header { text-align: center; margin-bottom: 50px; padding-top: 40px; }
 
         .repo-info h1 {
             font-size: 2.8rem;
@@ -66,14 +52,8 @@
             margin-top: -5px;
         }
 
-        #repo-subtitle {
-            margin-top: 15px;
-            font-size: 0.9rem;
-            color: var(--accent-color);
-            opacity: 0.8;
-        }
+        #repo-subtitle { margin-top: 15px; font-size: 0.9rem; color: var(--accent-color); opacity: 0.8; }
 
-        /* Controls Area */
         .controls {
             display: flex;
             flex-direction: column;
@@ -98,16 +78,8 @@
             transition: border-color 0.3s;
         }
 
-        .input-group:focus-within {
-            border-color: var(--accent-color);
-        }
-
-        .input-group i, .input-group svg { 
-            color: var(--text-dim); 
-            margin-right: 12px;
-            width: 18px;
-            height: 18px;
-        }
+        .input-group:focus-within { border-color: var(--accent-color); }
+        .input-group svg { color: var(--text-dim); margin-right: 12px; width: 18px; height: 18px; }
 
         input {
             background: transparent;
@@ -119,13 +91,13 @@
             font-size: 0.95rem;
         }
 
-        /* App Grid (3 rows x 5 columns) */
         .app-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 1fr);
             gap: 24px;
             margin-top: 50px;
-            min-height: 500px;
+            min-height: 850px;
         }
 
         .app-card {
@@ -149,9 +121,9 @@
         }
 
         .app-icon {
-            width: 90px;
-            height: 90px;
-            border-radius: 22px;
+            width: 85px;
+            height: 85px;
+            border-radius: 20px;
             margin-bottom: 18px;
             object-fit: cover;
             background: #1e293b;
@@ -160,7 +132,7 @@
 
         .app-name {
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
             margin-bottom: 6px;
             display: -webkit-box;
             -webkit-line-clamp: 1;
@@ -171,19 +143,16 @@
         }
 
         .app-version {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--accent-color);
             background: rgba(56, 189, 248, 0.1);
             padding: 2px 10px;
             border-radius: 20px;
             margin-bottom: 8px;
+            font-weight: 600;
         }
 
-        .app-size {
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            margin-bottom: 20px;
-        }
+        .app-size { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 20px; }
 
         .download-btn {
             background: var(--text-main);
@@ -192,26 +161,17 @@
             padding: 10px 20px;
             border-radius: 14px;
             font-weight: 800;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             width: 100%;
             transition: all 0.2s;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-top: auto;
         }
 
-        .download-btn:hover {
-            background: var(--accent-color);
-            transform: scale(1.02);
-        }
+        .download-btn:hover { background: var(--accent-color); transform: scale(1.02); }
 
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 25px;
-            margin-top: 60px;
-        }
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 25px; margin-top: 60px; }
 
         .page-btn {
             background: var(--card-bg);
@@ -227,26 +187,15 @@
             transition: all 0.2s;
         }
 
-        .page-btn:hover:not(:disabled) {
-            background: var(--accent-color);
-            color: #000;
-        }
-
+        .page-btn:hover:not(:disabled) { background: var(--accent-color); color: #000; }
         .page-btn:disabled { opacity: 0.2; cursor: not-allowed; }
 
-        #page-indicator {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-dim);
-        }
+        #page-indicator { font-weight: 600; font-size: 0.9rem; color: var(--text-dim); }
 
-        /* Mobile Adjustments */
-        @media (max-width: 1100px) { .app-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 768px) { 
-            .app-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; } 
-            .repo-info h1 { font-size: 2rem; }
-        }
-        @media (max-width: 480px) { .app-grid { grid-template-columns: repeat(1, 1fr); } }
+        /* Responsive Breakpoints */
+        @media (max-width: 1200px) { .app-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: auto; min-height: auto; } }
+        @media (max-width: 768px) { .app-grid { grid-template-columns: repeat(2, 1fr); } .repo-info h1 { font-size: 2rem; } }
+        @media (max-width: 480px) { .app-grid { grid-template-columns: 1fr; } }
 
         .loader { text-align: center; padding: 100px; color: var(--accent-color); font-weight: 600; }
     </style>
@@ -258,7 +207,7 @@
         <div class="repo-info">
             <h1 id="repo-title">RuSideStore AIO</h1>
             <span class="explorer-tag">explorer by rusidestore</span>
-            <p id="repo-subtitle">Warming up...</p>
+            <p id="repo-subtitle">Initializing Secure Connection...</p>
         </div>
     </header>
 
@@ -287,6 +236,10 @@
 </div>
 
 <script>
+    // --- PROXY CONFIGURATION ---
+    const PROXY_URL = "https://repo-explorer-helper.onrender.com/proxy"; 
+    const PUBLIC_APP_ID = "rusidestore-web-client";
+
     const APPS_PER_PAGE = 15;
     let allApps = [];
     let filteredApps = [];
@@ -299,48 +252,31 @@
     const searchInput = document.getElementById('search-input');
     const repoUrlInput = document.getElementById('repo-url');
 
-    function refreshIcons() {
-        if (typeof lucide !== 'undefined') lucide.createIcons();
-    }
+    function refreshIcons() { if (typeof lucide !== 'undefined') lucide.createIcons(); }
 
     function formatBytes(bytes) {
         if (!bytes || bytes === 0) return "Unknown Size";
-        return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+        const mb = bytes / (1024 * 1024);
+        return mb > 1024 ? (mb / 1024).toFixed(2) + " GB" : mb.toFixed(2) + " MB";
     }
 
-    /**
-     * CORS FIX: This function attempts a direct fetch,
-     * and if it fails, it retries using a CORS Proxy.
-     */
-    async function smartFetch(url) {
-        try {
-            // Attempt 1: Direct Fetch
-            const response = await fetch(url);
-            if (response.ok) return await response.json();
-            throw new Error('Direct fetch failed');
-        } catch (e) {
-            console.log("Direct access blocked by CORS. Trying Proxy...");
-            // Attempt 2: CORS Proxy (corsproxy.io is very reliable)
-            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
-            const response = await fetch(proxyUrl);
-            if (!response.ok) throw new Error('Proxy fetch failed');
-            return await response.json();
-        }
-    }
-
-    async function loadRepo(url) {
+    async function loadRepo() {
+        const url = repoUrlInput.value;
         loading.style.display = 'block';
-        grid.style.opacity = '0.3';
-        repoSubtitle.innerText = "Connecting to repository...";
+        grid.style.display = 'none';
+        repoSubtitle.innerText = "Connecting to Secure Proxy...";
         
         try {
-            const data = await smartFetch(url);
+            const response = await fetch(`${PROXY_URL}?url=${encodeURIComponent(url)}`, {
+                headers: { 'x-app-id': PUBLIC_APP_ID }
+            });
+
+            if (!response.ok) throw new Error('Proxy error or unauthorized origin');
+
+            const data = await response.json();
             
-            // Dynamic Header & Subtitle
-            repoTitle.innerText = data.name || "External Repo";
-            repoSubtitle.innerText = data.subtitle || `Total Apps: ${data.apps.length}`;
-            
-            // Dynamic Search Placeholder
+            repoTitle.innerText = data.name || "Repo Browser";
+            repoSubtitle.innerText = data.subtitle || `Library: ${data.apps.length} Apps`;
             searchInput.placeholder = `Search ${data.apps.length.toLocaleString()} apps...`;
             
             allApps = data.apps;
@@ -348,48 +284,47 @@
             currentPage = 1;
             renderPage();
         } catch (err) {
-            repoSubtitle.innerText = "Error: Repository unreachable (CORS or 404)";
+            repoSubtitle.innerText = "Error: Proxy unreachable. Please check Render logs.";
             console.error(err);
         } finally {
             loading.style.display = 'none';
-            grid.style.opacity = '1';
+            grid.style.display = 'grid';
         }
     }
 
     function renderPage() {
         grid.innerHTML = '';
         const start = (currentPage - 1) * APPS_PER_PAGE;
-        const end = start + APPS_PER_PAGE;
-        const pageApps = filteredApps.slice(start, end);
+        const pageApps = filteredApps.slice(start, start + APPS_PER_PAGE);
 
         if (pageApps.length === 0) {
-            grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #64748b;">No apps found matching your search.</div>';
+            grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: #64748b;">No results found.</div>';
         }
 
         pageApps.forEach(app => {
             const card = document.createElement('div');
             card.className = 'app-card';
-            const icon = app.iconURL || 'https://side-store.xyz/assets/img/icon.png';
+            const icon = app.iconURL || 'https://sidestore.io/assets/img/logo.png';
             
             card.innerHTML = `
-                <img src="${icon}" class="app-icon" onerror="this.src='https://side-store.xyz/assets/img/icon.png'">
+                <img src="${icon}" class="app-icon" onerror="this.src='https://sidestore.io/assets/img/logo.png'">
                 <div class="app-name">${app.name}</div>
                 <div class="app-version">v${app.version}</div>
                 <div class="app-size">${formatBytes(app.size)}</div>
-                <a href="${app.downloadURL}" class="download-btn">Get App</a>
+                <a href="${app.downloadURL}" class="download-btn">Download</a>
             `;
             grid.appendChild(card);
         });
 
-        const totalPages = Math.ceil(filteredApps.length / APPS_PER_PAGE);
-        document.getElementById('page-indicator').innerText = `Page ${currentPage} of ${totalPages || 1}`;
+        const totalPages = Math.ceil(filteredApps.length / APPS_PER_PAGE) || 1;
+        document.getElementById('page-indicator').innerText = `Page ${currentPage} of ${totalPages}`;
         document.getElementById('prev-page').disabled = currentPage === 1;
         document.getElementById('next-page').disabled = currentPage >= totalPages;
         
         refreshIcons();
     }
 
-    // Events
+    // Logic Event Listeners
     searchInput.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
         filteredApps = allApps.filter(a => 
@@ -400,9 +335,7 @@
         renderPage();
     });
 
-    repoUrlInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') loadRepo(e.target.value);
-    });
+    repoUrlInput.addEventListener('change', loadRepo);
 
     document.getElementById('prev-page').onclick = () => {
         if (currentPage > 1) { currentPage--; renderPage(); window.scrollTo({top: 0, behavior: 'smooth'}); }
@@ -416,7 +349,8 @@
     };
 
     window.onload = () => {
-        loadRepo(repoUrlInput.value);
+        loadRepo();
+        refreshIcons();
     };
 </script>
 
