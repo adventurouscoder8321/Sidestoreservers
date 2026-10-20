@@ -21,6 +21,22 @@
             "address": "https://ani.846969.xyz"
         },
         {
+            "name": "SideStore (New)",
+            "address": "https://new.ani.sidestore.io"
+        },
+        {
+            "name": "SideStore (Windows ADI)",
+            "address": "https://win.ani.sidestore.io"
+        },
+        {
+            "name": "jkcoxson",
+            "address": "https://mac-ani.jkcoxson.com"
+        },
+        {
+            "name": "jkcoxson (Windows ADI)",
+            "address": "https://ani.jkcoxson.com"
+        },
+        {
             "name": "nythepegasus",
             "address": "https://ani.npeg.us"
         },
@@ -46,7 +62,7 @@
         },
         {
             "name": "neoarz",
-            "address": "https://ani.neoarz.xyz"
+            "address": "https://ani.neoarz.com"
         },
         {
             "name": "pythonplayer123",
@@ -59,6 +75,10 @@
         {
             "name": "crystall1nedev's server",
             "address": "https://anisette.crystall1ne.dev"
+        },
+        {
+            "name": "ethxn's omnisette server :3",
+            "address": "https://omni.ethxn.xyz"
         }
     ]
 }
